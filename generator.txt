@@ -1,0 +1,168 @@
+# my_list = [x for x in range(1,1_000_000)]
+# print(my_list)
+
+# import time 
+# start = time.time()
+
+# # m1 = [time.sleep(x) for x in range(1,3)]
+# m2 = (time.sleep(x) for x in range(1,3))
+# next(m2)
+# next(m2)
+
+
+# end = time.time()
+# print(end - start)
+
+
+
+
+
+#генератор
+# my_list_2 = (x for x in range(1,1_000_000))
+# print(my_list_2)
+# print(type(my_list_2))
+# print(next(my_list_2))#прохожусь по генератору 
+
+# my_list_3 = (x for x in range(1,3))
+# print(next(my_list_3))
+# print(next(my_list_3))
+# print(next(my_list_3))
+
+# my_str = "Hello"
+# my_int = 123
+# my_listt = [1,2,3,4]
+
+# int
+# str
+
+# for i in my_int:
+#     print(i)
+
+
+
+
+# def lazy_func():
+#     for item in range(1,11):#2 #7
+#         print("До" , item)  #3
+#         yield item #отдаю item - заморозка
+#         print("После" , item) #6 
+
+
+
+
+
+# for i in lazy_func():#1 #5
+#     print(i) #4
+
+
+
+
+
+# f = open("test.txt","w")
+# f.write("Hello")
+# f.close() #чтобы не возникала ошибка 
+
+# f = open("test.txt","w")
+# f.write("Hello1")
+# # f.close()
+
+# #контекстный менеджер 
+# with open("test.txt","w") as f:
+#     f.write("Hello")  
+    #после выхода из тела автоматически выполнится f.close()
+
+
+
+
+
+#библиотека для создания контекстных менеджеров через декоратор 
+# или наследования 
+# import contextlib
+
+# @contextlib.contextmanager
+# def reverse_str(you_str):
+#     print("Вход к контекстный менеджер")#2
+#     yield you_str[::-1] #переворация строки и отдаю  #3
+#     # продолжаю после выхода из with
+#     print("Выход из контекстного менеджер")#5
+
+# # with  - выполнить код перед выполнением тела with и после выполения тела with
+# with reverse_str("Hello world") as r:#1
+#     print(r)#4
+
+# @contextlib.contextmanager
+# def exc_handler(exc):
+#     try:
+#         yield True #заморозка
+#         #разморозка
+#     except exc: # 
+#         print("Произошло исключение")
+
+# with exc_handler(IndexError):
+#     my_list = [1,2]
+#     print(my_list[3])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def decor(func):
+#     def new_func():
+#         print("new1")
+#         func()
+#         print("new2")
+#     return new_func
+
+# def my_func():
+#     print("main")
+
+# my_func = decor(func = my_func)
+
+# @decor
+# def my_func():
+#     print("main")
+
+# x = 3
+# y = print
+
+
+# говорить = print
+# привет ="привет"
+
+# говорить(привет)
+
+
+
+def func(*args,  **kwargs):
+    print(args)
+    print(kwargs)
+
+func(1,2,3,4,5, a = 1, b = 2, c = 3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
